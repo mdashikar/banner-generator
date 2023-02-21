@@ -1,7 +1,7 @@
 {
   "name": "create-nodejs-express-app",
   "version": "1.7.0",
-  "description": "Create a Node.js app for building production-ready RESTful APIs using Express, by running one command",
+  "description": "RESTful APIs using Express",
   "bin": "bin/createNodejsApp.js",
   "main": "src/index.js",
   "repository": "",
