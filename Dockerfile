@@ -4,11 +4,11 @@ FROM node:alpine
 
 WORKDIR /usr/src/node-app
 
-COPY package*.json yarn.lock ./
+COPY package*.json ./
 
 USER node
 
-RUN yarn install
+RUN npm install
 
 COPY . .
 
