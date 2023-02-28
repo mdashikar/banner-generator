@@ -5,7 +5,7 @@ services:
     build: .
     image: node-app
     environment:
-      - MONGODB_URL=mongodb://mongodb:27017/node-boilerplate
+      - MONGODB_URL=mongodb://admin:qUbgMAAMvQ7Pg3uz@ac-gnv8j3r-shard-00-00.zg8wt1z.mongodb.net:27017,ac-gnv8j3r-shard-00-01.zg8wt1z.mongodb.net:27017,ac-gnv8j3r-shard-00-02.zg8wt1z.mongodb.net:27017/?ssl=true&replicaSet=atlas-rdnc2m-shard-0&authSource=admin&retryWrites=true&w=majority
     ports:
       - '3000:3000'
     depends_on:
