@@ -1,7 +1,8 @@
 const express = require('express');
+
 const router = express.Router();
 const imageController = require('../../controllers/image.controller');
 
-router.post('/', imageController.generateImage);
+router.post('/', imageController.generateImageViaKonva);
 
 module.exports = router;

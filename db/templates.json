@@ -1,0 +1,185 @@
+{
+  "content": {
+    "attrs": {
+      "width": 800,
+      "height": 400
+    },
+    "className": "Stage",
+    "children": [
+      {
+        "attrs": {},
+        "className": "Layer",
+        "children": [
+          {
+            "className": "Circle",
+            "type": "circle",
+            "attrs": {
+              "x": 770,
+              "y": 375,
+              "radius": 70,
+              "fill": "red",
+              "stroke": "black",
+              "strokeWidth": 4,
+              "id": "Circle_1"
+            }
+          },
+          {
+            "className": "Circle",
+            "type": "circle",
+            "attrs": {
+              "x": 20,
+              "y": 385,
+              "radius": 70,
+              "fill": "red",
+              "stroke": "black",
+              "strokeWidth": 4,
+              "id": "Circle_1IVxmje"
+            }
+          },
+          {
+            "className": "Circle",
+            "type": "circle",
+            "attrs": {
+              "x": 770,
+              "y": 20,
+              "radius": 70,
+              "fill": "red",
+              "stroke": "black",
+              "strokeWidth": 4,
+              "id": "Circle_1PS5Fqj"
+            }
+          },
+          {
+            "attrs": {
+              "x": 234.99999999999986,
+              "y": 135.00000000000003,
+              "width": 390,
+              "height": 99.99999999999997,
+              "fill": "green",
+              "color": "yellow",
+              "id": "Rect_2"
+            },
+            "type": "reactangle",
+            "className": "Rect"
+          },
+          {
+            "attrs": {
+              "text": "Dorik",
+              "x": 375,
+              "y": 155,
+              "strokeDasharray": 0,
+              "fontSize": 50,
+              "fontFamily": "Calibri",
+              "fill": "rgba(247,247,247,1)",
+              "stroke": "rgba(246,239,239,1)",
+              "strokeWidth": 1,
+              "id": "Text_4"
+            },
+            "type": "text",
+            "className": "Text"
+          },
+          {
+            "className": "Circle",
+            "type": "circle",
+            "attrs": {
+              "x": 10,
+              "y": 15,
+              "radius": 70,
+              "fill": "red",
+              "stroke": "black",
+              "strokeWidth": 4,
+              "id": "Circle_1IVxmjerTkSQI"
+            }
+          },
+          {
+            "attrs": {
+              "text": "new Layer",
+              "x": 80,
+              "y": 80,
+              "strokeDasharray": 0,
+              "fontSize": 30,
+              "fontFamily": "Calibri",
+              "fill": "green",
+              "stroke": "red",
+              "strokeWidth": 1,
+              "id": "Text_7"
+            },
+            "type": "text",
+            "className": "Text"
+          },
+          {
+            "className": "Image",
+            "type": "image",
+            "attrs": {
+              "width": 75.00000000000004,
+              "height": 99.99999999999994,
+              "x": 110.00000000000009,
+              "y": 259.9999999999999,
+              "src": "https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg",
+              "id": "Image_9XFM4pCbByDLh",
+              "shadowBlur": 0.5
+            }
+          },
+          {
+            "className": "Star",
+            "attrs": {
+              "x": 550,
+              "y": 65,
+              "numPoints": 5,
+              "innerRadius": 40,
+              "outerRadius": 70,
+              "fill": "red",
+              "stroke": "black",
+              "strokeWidth": 4,
+              "id": "Star_6"
+            }
+          },
+          {
+            "attrs": {
+              "text": "Simple Text",
+              "x": 295,
+              "y": 270,
+              "strokeDasharray": 0,
+              "fontSize": 30,
+              "fontFamily": "Calibri",
+              "fill": "green",
+              "stroke": "red",
+              "strokeWidth": 1,
+              "id": "Text_7"
+            },
+            "type": "text",
+            "className": "Text"
+          },
+          {
+            "className": "Image",
+            "type": "image",
+            "attrs": {
+              "width": 169.00000000000014,
+              "height": 99.99999999999997,
+              "x": 159.99999999999986,
+              "y": 34.99999999999998,
+              "src": "https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg",
+              "id": "Image_9",
+              "shadowBlur": 0.5
+            }
+          },
+          {
+            "className": "Image",
+            "type": "image",
+            "attrs": {
+              "width": 168.9999999999999,
+              "height": 100.0000000000001,
+              "x": 520,
+              "y": 195,
+              "src": "https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg",
+              "id": "Image_9XFM4pC",
+              "shadowBlur": 0.5
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "name": "test-template",
+  "id": "test1"
+}

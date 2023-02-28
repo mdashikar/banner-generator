@@ -41,17 +41,19 @@ app.use(compression());
 app.use(cors());
 app.options('*', cors());
 
+app.use('/files', express.static('files/'));
+
 // jwt authentication
 app.use(passport.initialize());
 passport.use('jwt', jwtStrategy);
 
 // limit repeated failed requests to auth endpoints
 if (config.env === 'production') {
-  app.use('/v1/auth', authLimiter);
+  app.use('/api/v1/auth', authLimiter);
 }
 
 // v1 api routes
-app.use('/v1', routes);
+app.use('/api/v1', routes);
 
 // send back a 404 error for any unknown api request
 app.use((req, res, next) => {
