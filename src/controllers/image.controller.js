@@ -2,10 +2,31 @@ const { loadImage } = require('canvas');
 const fs = require('fs');
 const httpStatus = require('http-status');
 const Konva = require('konva/cmj').default;
+const QRCode = require('qrcode');
 
 const logger = require('../config/logger');
 
 const templateData = require('../../db/templates.json');
+
+// Define a function to generate a QR code and draw it on a Konva.Image
+async function generateQRCode(url) {
+  // Generate the QR code as a data URL
+  const qrCodeDataURL = await QRCode.toDataURL(url);
+
+  // Load the image from the data URL
+  const image = await loadImage(qrCodeDataURL);
+
+  // Create a new Konva.Image object and set its image to the generated QR code image
+  const qrCodeImage = new Konva.Image({
+    image,
+    x: 0,
+    y: 0,
+    width: 100,
+    height: 100,
+  });
+
+  return qrCodeImage;
+}
 
 const generateImageFromQueryString = async (req, res) => {
   try {
@@ -13,10 +34,6 @@ const generateImageFromQueryString = async (req, res) => {
 
     const formatQueryString = JSON.parse(data);
 
-    // for (const key of data) {
-    //   console.log(` Keys in  data ${key} `);
-    // }
-    // console.log(template, modifications);
     const { content } = templateData;
     const stage = Konva.Node.create(content);
     const images = await stage.find('Image');
@@ -40,6 +57,15 @@ const generateImageFromQueryString = async (req, res) => {
         stage.findOne('Layer').draw();
       }
     }
+
+    const qrCodeImage = await generateQRCode('www.ashik.dev');
+    // Create a new Konva.Layer object
+    const layer = new Konva.Layer();
+
+    // Add the image to the layer
+    layer.add(qrCodeImage);
+    // Add the QR code image to the stage
+    stage.add(layer);
 
     stage.findOne('Layer').draw();
 
