@@ -11,7 +11,14 @@ const templateData = require('../../db/templates.json');
 // Define a function to generate a QR code and draw it on a Konva.Image
 async function generateQRCode(url) {
   // Generate the QR code as a data URL
-  const qrCodeDataURL = await QRCode.toDataURL(url);
+  const qrCodeDataURL = await QRCode.toDataURL(url, {
+    quality: 1,
+    margin: 0,
+    color: {
+      dark: '#00F', // Blue dots
+      light: '#0000', // Transparent background
+    },
+  });
 
   // Load the image from the data URL
   const image = await loadImage(qrCodeDataURL);
@@ -20,7 +27,7 @@ async function generateQRCode(url) {
   const qrCodeImage = new Konva.Image({
     image,
     x: 0,
-    y: 0,
+    y: 120,
     width: 100,
     height: 100,
   });
