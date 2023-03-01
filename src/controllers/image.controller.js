@@ -3,13 +3,12 @@ const fs = require('fs');
 const httpStatus = require('http-status');
 const Konva = require('konva/cmj').default;
 
+const { type } = require('os');
 const logger = require('../config/logger');
 // Import the helper function.
 const { formatTitle } = require('../utils/formatTitle');
 
 const templateData = require('../../db/templates.json');
-
-console.log(templateData);
 
 const genImage = async (title, content, author, imageUrl, backgroundImageUrl) => {
   const width = 1200;
@@ -92,6 +91,14 @@ const generateImage = async (req, res) => {
 const generateImageViaKonva = async (req, res) => {
   try {
     const { modifications } = req.body;
+    const { data } = req.query;
+
+    const formatQueryString = JSON.parse(data);
+
+    // for (const key of data) {
+    //   console.log(` Keys in  data ${key} `);
+    // }
+    // console.log(template, modifications);
     const { content } = templateData;
     const stage = Konva.Node.create(content);
     const images = await stage.find('Image');
@@ -101,19 +108,37 @@ const generateImageViaKonva = async (req, res) => {
       imageNode.setImage(img);
     }
 
-    for (const item of modifications) {
-      const element = stage.findOne(`#${item.name}`);
-      if (element && element.className === 'Text') {
-        element.text(item.text);
-        // Call `layer.batchDraw()` to redraw the layer
-        // so the changes are reflected on the stage
-        stage.findOne('Layer').batchDraw();
+    if (modifications) {
+      for (const item of modifications) {
+        const element = stage.findOne(`#${item.name}`);
+        if (element && element.className === 'Text') {
+          element.text(item.text);
+          // Call `layer.batchDraw()` to redraw the layer
+          // so the changes are reflected on the stage
+          stage.findOne('Layer').batchDraw();
+        }
+        if (element && element.className === 'Image') {
+          const img = await loadImage(item.image_url);
+          element.image(img);
+          stage.findOne('Layer').draw();
+        }
       }
-      if (element && element.className === 'Image') {
-        const img = await loadImage(item.image_url);
-        console.log('Image loaded', img);
-        element.image(img);
-        stage.findOne('Layer').draw();
+    }
+    if (formatQueryString) {
+      for (const key in formatQueryString) {
+        const item = JSON.parse(JSON.stringify(formatQueryString[key]));
+        const element = stage.findOne(`#${item.name}`);
+        if (element && element.className === 'Text') {
+          element.text(item.text);
+          // Call `layer.batchDraw()` to redraw the layer
+          // so the changes are reflected on the stage
+          stage.findOne('Layer').batchDraw();
+        }
+        if (element && element.className === 'Image') {
+          const img = await loadImage(item.image_url);
+          element.image(img);
+          stage.findOne('Layer').draw();
+        }
       }
     }
 
