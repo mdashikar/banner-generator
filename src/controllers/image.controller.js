@@ -1,15 +1,31 @@
-const { loadImage } = require('canvas');
+// import nodejs bindings to native tensorflow,
+// not required, but will speed up things drastically (python required)
+
+require('@tensorflow/tfjs-node');
+
+const faceapi = require('@vladmandic/face-api');
+const path = require('path');
+
+const projectRoot = path.resolve(process.cwd());
+
+const modelsPath = path.join(projectRoot, './weights');
+
+const { loadImage, createCanvas, Canvas, Image, ImageData } = require('canvas');
 const fs = require('fs');
 const httpStatus = require('http-status');
 const Konva = require('konva/cmj').default;
 const QRCode = require('qrcode');
+const sharp = require('sharp');
+const smartcrop = require('smartcrop-sharp');
 
 const logger = require('../config/logger');
 
-const templateData = require('../../db/templates.json');
+const templateData = require('../../db/template_2.json');
+
+faceapi.env.monkeyPatch({ Canvas, Image, ImageData });
 
 // Define a function to generate a QR code and draw it on a Konva.Image
-async function generateQRCode(url) {
+const generateQRCode = async (url) => {
   // Generate the QR code as a data URL
   const qrCodeDataURL = await QRCode.toDataURL(url, {
     quality: 1,
@@ -33,7 +49,54 @@ async function generateQRCode(url) {
   });
 
   return qrCodeImage;
-}
+};
+
+// finds the best crop of src and writes the cropped and resized image to dest.
+const applySmartCrop = async (src, width, height) => {
+  // Load the buffer as an image object
+  const img = await loadImage(src);
+  await faceapi.nets.ssdMobilenetv1.loadFromDisk(modelsPath);
+  await faceapi.nets.tinyFaceDetector.loadFromDisk(modelsPath);
+
+  // Detect faces in the image
+  const detections = await faceapi.detectAllFaces(img);
+
+  // Crop the image based on the first detected face
+  if (detections.length > 0) {
+    const detection = detections[0];
+
+    const { x } = detection.box;
+    const { y } = detection.box;
+    const w = detection.box.width;
+    const h = detection.box.height;
+    const boost = [
+      {
+        x,
+        y,
+        width: w,
+        height: h,
+        weight: 1, // in the range [0, 1]
+      },
+    ];
+
+    // Crop the image using smart crop
+    return smartcrop.crop(src, { width: w, height: h, minScale: 1, ruleOfThirds: false, boost }).then(function (result) {
+      const crop = result.topCrop;
+      return sharp(src)
+        .extract({ width: crop.width, height: crop.height, left: crop.x, top: crop.y })
+        .resize(width, height)
+        .toBuffer();
+    });
+  }
+
+  return smartcrop.crop(src, { width, height }).then(function (result) {
+    const crop = result.topCrop;
+    return sharp(src)
+      .extract({ width: crop.width, height: crop.height, left: crop.x, top: crop.y })
+      .resize(width, height)
+      .toBuffer();
+  });
+};
 
 const generateImageFromQueryString = async (req, res) => {
   try {
@@ -59,20 +122,32 @@ const generateImageFromQueryString = async (req, res) => {
         stage.findOne('Layer').batchDraw();
       }
       if (element && element.className === 'Image') {
+        const imgAttributes = element.attrs;
         const img = await loadImage(item.image_url);
-        element.image(img);
+        // // Create a canvas with the same dimensions as the image
+        const canvas = createCanvas(img.width, img.height);
+        const ctx = canvas.getContext('2d');
+        // Draw the image onto the canvas
+        ctx.drawImage(img, 0, 0, img.width, img.height);
+        // Get the buffer from the canvas
+        const buffer = canvas.toBuffer('image/png', { quality: 1 });
+
+        // const imgBuffer = Buffer.from(img);
+        const croppedImgBuffer = await applySmartCrop(buffer, parseInt(imgAttributes.width), parseInt(imgAttributes.height));
+        const croppedImg = await loadImage(croppedImgBuffer);
+        element.image(croppedImg);
         stage.findOne('Layer').draw();
       }
     }
 
-    const qrCodeImage = await generateQRCode('www.ashik.dev');
-    // Create a new Konva.Layer object
-    const layer = new Konva.Layer();
+    // const qrCodeImage = await generateQRCode('www.ashik.dev');
+    // // Create a new Konva.Layer object
+    // const layer = new Konva.Layer();
 
-    // Add the image to the layer
-    layer.add(qrCodeImage);
-    // Add the QR code image to the stage
-    stage.add(layer);
+    // // Add the image to the layer
+    // layer.add(qrCodeImage);
+    // // Add the QR code image to the stage
+    // stage.add(layer);
 
     stage.findOne('Layer').draw();
 
@@ -80,6 +155,7 @@ const generateImageFromQueryString = async (req, res) => {
     const base64ImageWithoutHeader = imageBase64String.split(';base64,').pop();
     fs.writeFileSync('files/konva.png', base64ImageWithoutHeader, { encoding: 'base64' });
     const buffer = Buffer.from(base64ImageWithoutHeader, 'base64');
+
     res.setHeader('Content-Type', 'image/png');
     res.end(buffer);
   } catch (error) {

@@ -1,0 +1,198 @@
+{
+  "content": {
+    "attrs": {
+      "width": 800,
+      "height": 400
+    },
+    "className": "Stage",
+    "children": [
+      {
+        "attrs": {},
+        "className": "Layer",
+        "children": [
+          {
+            "attrs": {
+              "x": 0,
+              "y": 0,
+              "width": 800,
+              "height": 401,
+              "fill": "rgba(129,0,243,1)",
+              "color": "yellow",
+              "id": "rect_4"
+            },
+            "type": "rect",
+            "className": "Rect"
+          },
+          {
+            "attrs": {
+              "x": 0,
+              "y": 0,
+              "width": 800,
+              "height": 401,
+              "fill": "rgba(0,0,0,0.44)",
+              "color": "yellow",
+              "id": "rect_42GuwAi"
+            },
+            "type": "rect",
+            "className": "Rect"
+          },
+          {
+            "className": "Image",
+            "type": "image",
+            "attrs": {
+              "width": 240,
+              "height": 240,
+              "x": 60,
+              "y": 80,
+              "src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+              "id": "image_1",
+              "cornerRadius": 240
+            }
+          },
+          {
+            "attrs": {
+              "text": "Emploee of\n the month",
+              "x": 530,
+              "y": 75,
+              "strokeDasharray": 0,
+              "fontSize": 30,
+              "fontFamily": "Calibri",
+              "fill": "rgba(255,255,255,1)",
+              "stroke": "red",
+              "strokeWidth": 0,
+              "id": "text_2",
+              "height": 96,
+              "width": 213,
+              "align": "right",
+              "verticalAlign": "middle",
+              "fontStyle": "bold",
+              "textDecoration": "",
+              "opacity": 1,
+              "fontVariant": "normal",
+              "lineHeight": 1,
+              "letterSpacing": 1
+            },
+            "width": 200,
+            "height": 100,
+            "type": "text",
+            "className": "Text"
+          },
+          {
+            "attrs": {
+              "text": "Timothy Gilbert",
+              "x": 315,
+              "y": 165,
+              "strokeDasharray": 0,
+              "fontSize": 50,
+              "fontFamily": "Calibri",
+              "fill": "rgba(255,255,255,1)",
+              "stroke": "red",
+              "strokeWidth": 0,
+              "id": "text_2OJCaSr",
+              "height": 45,
+              "width": 434,
+              "align": "right",
+              "verticalAlign": "middle",
+              "fontStyle": "bold",
+              "textDecoration": "",
+              "opacity": 1,
+              "fontVariant": "normal",
+              "lineHeight": 1,
+              "letterSpacing": 1
+            },
+            "width": 200,
+            "height": 100,
+            "type": "text",
+            "className": "Text"
+          },
+          {
+            "attrs": {
+              "text": "Thank you for your your month's performance and dedication to the company. Awarded on the month of:",
+              "x": 410,
+              "y": 230,
+              "strokeDasharray": 0,
+              "fontSize": 15,
+              "fontFamily": "Calibri",
+              "fill": "rgba(255,255,255,1)",
+              "stroke": "red",
+              "strokeWidth": 0,
+              "id": "text_2OJCaSrtslIHF",
+              "height": 45,
+              "width": 344,
+              "align": "right",
+              "verticalAlign": "middle",
+              "fontStyle": "",
+              "textDecoration": "",
+              "opacity": 1,
+              "fontVariant": "normal",
+              "lineHeight": 1,
+              "letterSpacing": 1
+            },
+            "width": 200,
+            "height": 100,
+            "type": "text",
+            "className": "Text"
+          },
+          {
+            "attrs": {
+              "text": "october 2025",
+              "x": 395,
+              "y": 285,
+              "strokeDasharray": 0,
+              "fontSize": 18,
+              "fontFamily": "Calibri",
+              "fill": "rgba(255,255,255,1)",
+              "stroke": "red",
+              "strokeWidth": 0,
+              "id": "text_2OJCaSrtslIHFP_NMoa",
+              "height": 45,
+              "width": 344,
+              "align": "right",
+              "verticalAlign": "middle",
+              "fontStyle": "bold",
+              "textDecoration": "",
+              "opacity": 1,
+              "fontVariant": "normal",
+              "lineHeight": 1,
+              "letterSpacing": 1
+            },
+            "width": 200,
+            "height": 100,
+            "type": "text",
+            "className": "Text"
+          },
+          {
+            "attrs": {
+              "text": "Charmann Co.",
+              "x": 545,
+              "y": 10,
+              "strokeDasharray": 0,
+              "fontSize": 30,
+              "fontFamily": "Calibri",
+              "fill": "rgba(255,255,255,1)",
+              "stroke": "red",
+              "strokeWidth": 0,
+              "id": "text_29z0n3d",
+              "height": 96,
+              "width": 203,
+              "align": "right",
+              "verticalAlign": "middle",
+              "fontStyle": "bold",
+              "textDecoration": "",
+              "opacity": 1,
+              "fontVariant": "small-caps",
+              "lineHeight": 1,
+              "letterSpacing": 0.1
+            },
+            "width": 200,
+            "height": 100,
+            "type": "text",
+            "className": "Text"
+          }
+        ]
+      }
+    ]
+  },
+  "name": "test-template",
+  "id": "test1"
+}
