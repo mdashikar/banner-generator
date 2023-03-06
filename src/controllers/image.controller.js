@@ -159,7 +159,7 @@ const generateImageFromQueryString = async (req, res) => {
     res.setHeader('Content-Type', 'image/png');
     res.end(buffer);
   } catch (error) {
-    logger.error(`Error generating image via konva: ${error.message}`);
+    logger.error(`Error generating image via konva: ${error}`);
     res.status(httpStatus.INTERNAL_SERVER_ERROR).json(httpStatus['500']);
   }
 };
