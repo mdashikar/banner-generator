@@ -1,0 +1,392 @@
+{
+  "content": {
+    "attrs": {
+      "width": 800,
+      "height": 400
+    },
+    "className": "Stage",
+    "children": [
+      {
+        "attrs": {},
+        "className": "Layer",
+        "children": [
+          {
+            "attrs": {
+              "x": 0,
+              "y": 0,
+              "width": 800,
+              "height": 401,
+              "fill": "rgba(129,0,243,1)",
+              "color": "yellow",
+              "id": "rect_4"
+            },
+            "type": "rect",
+            "className": "Rect"
+          },
+          {
+            "attrs": {
+              "x": 30,
+              "y": -10,
+              "width": 800,
+              "height": 401,
+              "fill": "radial-gradient(circle, rgba(221,91,30,0.98) 27%, rgba(0,0,128,1) 76%, rgba(0,212,255,1) 100%)",
+              "color": "yellow",
+              "id": "rect_42GuwAi",
+              "fillPriority": "radial-gradient",
+              "fillRadialGradientStartPoint": {
+                "x": 400,
+                "y": 200.5
+              },
+              "fillRadialGradientEndPoint": {
+                "x": 400,
+                "y": 200.5
+              },
+              "fillRadialGradientEndRadius": 600.5,
+              "fillRadialGradientStartRadius": 0,
+              "fillRadialGradientColorStops": [0.27, "rgba(221,91,30,0.98)", 0.76, "rgba(0,0,128,1)", 1, "rgba(0,212,255,1)"]
+            },
+            "type": "rect",
+            "className": "Rect"
+          },
+          {
+            "className": "Circle",
+            "type": "circle",
+            "attrs": {
+              "x": -40,
+              "y": 170,
+              "width": 413,
+              "height": 413,
+              "fill": "radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(128,0,128, 1) 35%, rgba(255,0,0,1) 67%, rgba(0,212,255,1) 100%)",
+              "stroke": "black",
+              "strokeWidth": 0,
+              "id": "circle_7",
+              "fillPriority": "radial-gradient",
+              "fillRadialGradientStartPoint": {
+                "x": 0,
+                "y": 0
+              },
+              "fillRadialGradientEndPoint": {
+                "x": 0,
+                "y": 0
+              },
+              "fillRadialGradientEndRadius": 413,
+              "fillRadialGradientStartRadius": 0,
+              "fillRadialGradientColorStops": [
+                0,
+                "rgba(2,0,36,1)",
+                0.35,
+                "rgba(128,0,128, 1)",
+                0.67,
+                "rgba(255,0,0,1)",
+                1,
+                "rgba(0,212,255,1)"
+              ],
+              "_size": 413
+            }
+          },
+          {
+            "className": "Circle",
+            "type": "circle",
+            "attrs": {
+              "x": -75,
+              "y": 235,
+              "width": 478,
+              "height": 478,
+              "fill": "radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(128,0,128,1) 35%, rgba(0,0,255,1) 67%, rgba(0,212,255,1) 100%)",
+              "stroke": "black",
+              "strokeWidth": 0,
+              "id": "circle_7T0kP0Z",
+              "fillPriority": "radial-gradient",
+              "fillRadialGradientStartPoint": {
+                "x": 0,
+                "y": 0
+              },
+              "fillRadialGradientEndPoint": {
+                "x": 0,
+                "y": 0
+              },
+              "fillRadialGradientEndRadius": 478,
+              "fillRadialGradientStartRadius": 0,
+              "fillRadialGradientColorStops": [
+                0,
+                "rgba(2,0,36,1)",
+                0.35,
+                "rgba(128,0,128, 1)",
+                0.67,
+                "rgba(255,0,0,1)",
+                1,
+                "rgba(0,212,255,1)"
+              ],
+              "_size": 478
+            }
+          },
+          {
+            "className": "Image",
+            "type": "image",
+            "attrs": {
+              "width": 240,
+              "height": 240,
+              "x": 80,
+              "y": 85,
+              "src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+              "id": "image_1",
+              "cornerRadius": 240
+            }
+          },
+          {
+            "attrs": {
+              "text": "Emploee of\n the month",
+              "x": 540,
+              "y": 75,
+              "strokeDasharray": 0,
+              "fontSize": 26,
+              "fontFamily": "Calibri",
+              "fill": "rgba(255,255,255,1)",
+              "stroke": "red",
+              "strokeWidth": 0,
+              "id": "text_2",
+              "height": 96,
+              "width": 222,
+              "align": "right",
+              "verticalAlign": "middle",
+              "fontStyle": "bold",
+              "textDecoration": "",
+              "opacity": 1,
+              "fontVariant": "normal",
+              "lineHeight": 1,
+              "letterSpacing": 1
+            },
+            "width": 200,
+            "height": 100,
+            "type": "text",
+            "className": "Text"
+          },
+          {
+            "attrs": {
+              "text": "Timothy Gilbert",
+              "x": 395,
+              "y": 165,
+              "strokeDasharray": 0,
+              "fontSize": 50,
+              "fontFamily": "Calibri",
+              "fill": "rgba(255,255,255,1)",
+              "stroke": "red",
+              "strokeWidth": 0,
+              "id": "text_2OJCaSr",
+              "height": 45,
+              "width": 372,
+              "align": "right",
+              "verticalAlign": "middle",
+              "fontStyle": "bold",
+              "textDecoration": "",
+              "opacity": 1,
+              "fontVariant": "normal",
+              "lineHeight": 1,
+              "letterSpacing": 1
+            },
+            "width": 200,
+            "height": 100,
+            "type": "text",
+            "className": "Text"
+          },
+          {
+            "attrs": {
+              "text": "Thank you for your your month's performance and dedication to the company. Awarded on the month of:",
+              "x": 415,
+              "y": 230,
+              "strokeDasharray": 0,
+              "fontSize": 15,
+              "fontFamily": "Calibri",
+              "fill": "rgba(255,255,255,1)",
+              "stroke": "red",
+              "strokeWidth": 0,
+              "id": "text_2OJCaSrtslIHF",
+              "height": 45,
+              "width": 344,
+              "align": "right",
+              "verticalAlign": "middle",
+              "fontStyle": "",
+              "textDecoration": "",
+              "opacity": 1,
+              "fontVariant": "normal",
+              "lineHeight": 1,
+              "letterSpacing": 1
+            },
+            "width": 200,
+            "height": 100,
+            "type": "text",
+            "className": "Text"
+          },
+          {
+            "attrs": {
+              "text": "october 2025",
+              "x": 410,
+              "y": 285,
+              "strokeDasharray": 0,
+              "fontSize": 18,
+              "fontFamily": "Calibri",
+              "fill": "rgba(255,255,255,1)",
+              "stroke": "red",
+              "strokeWidth": 0,
+              "id": "text_2OJCaSrtslIHFP_NMoa",
+              "height": 45,
+              "width": 344,
+              "align": "right",
+              "verticalAlign": "middle",
+              "fontStyle": "bold",
+              "textDecoration": "",
+              "opacity": 1,
+              "fontVariant": "normal",
+              "lineHeight": 1,
+              "letterSpacing": 1
+            },
+            "width": 200,
+            "height": 100,
+            "type": "text",
+            "className": "Text"
+          },
+          {
+            "attrs": {
+              "text": "Charmann Co.",
+              "x": 565,
+              "y": 36,
+              "strokeDasharray": 0,
+              "fontSize": 30,
+              "fontFamily": "Calibri",
+              "fill": "rgba(255,255,255,1)",
+              "stroke": "red",
+              "strokeWidth": 0,
+              "id": "text_29z0n3d",
+              "height": 56,
+              "width": 203,
+              "align": "right",
+              "verticalAlign": "middle",
+              "fontStyle": "bold",
+              "textDecoration": "",
+              "opacity": 1,
+              "fontVariant": "",
+              "lineHeight": 1,
+              "letterSpacing": 0.1
+            },
+            "width": 200,
+            "height": 100,
+            "type": "text",
+            "className": "Text"
+          },
+
+          {
+            "attrs": {
+              "x": 540,
+              "y": 315,
+              "width": 205,
+              "height": 73,
+              "numPoints": 5,
+              "innerRadius": 30,
+              "outerRadius": 15,
+              "fill": "rgba(32, 138, 170, 1)",
+              "stroke": "black",
+              "strokeWidth": 2,
+              "rating": 3.5,
+              "id": "rating_12",
+              "type": "rating",
+              "activeColor": "rgba(11, 237, 11, 0)"
+            },
+            "className": "Group",
+            "children": [
+              {
+                "className": "Star",
+                "attrs": {
+                  "x": 560.5,
+                  "y": 351.5,
+                  "numPoints": 5,
+                  "innerRadius": 10.25,
+                  "outerRadius": 20.5,
+                  "fill": "rgba(32, 138, 170, 1)",
+                  "stroke": "black",
+                  "strokeWidth": 2,
+                  "rating": 3.5,
+                  "id": "rating_121",
+                  "activeColor": "rgba(11, 237, 11, 0)"
+                }
+              },
+              {
+                "className": "Star",
+                "attrs": {
+                  "x": 601.5,
+                  "y": 351.5,
+                  "numPoints": 5,
+                  "innerRadius": 10.25,
+                  "outerRadius": 20.5,
+                  "fill": "rgba(32, 138, 170, 1)",
+                  "stroke": "black",
+                  "strokeWidth": 2,
+                  "rating": 3.5,
+                  "id": "rating_122",
+                  "activeColor": "rgba(11, 237, 11, 0)"
+                }
+              },
+              {
+                "className": "Star",
+                "attrs": {
+                  "x": 642.5,
+                  "y": 351.5,
+                  "numPoints": 5,
+                  "innerRadius": 10.25,
+                  "outerRadius": 20.5,
+                  "fill": "rgba(32, 138, 170, 1)",
+                  "stroke": "black",
+                  "strokeWidth": 2,
+                  "rating": 3.5,
+                  "id": "rating_123",
+                  "activeColor": "rgba(11, 237, 11, 0)"
+                }
+              },
+              {
+                "className": "Star",
+                "attrs": {
+                  "x": 683.5,
+                  "y": 351.5,
+                  "numPoints": 5,
+                  "innerRadius": 10.25,
+                  "outerRadius": 20.5,
+                  "fill": "rgba(32, 138, 170, 1)",
+                  "stroke": "black",
+                  "strokeWidth": 2,
+                  "rating": 3.5,
+                  "id": "rating_124",
+                  "activeColor": "rgba(11, 237, 11, 0)",
+                  "fillPriority": "linear-gradient",
+                  "fillLinearGradientStartPoint": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "fillLinearGradientEndPoint": {
+                    "x": 1,
+                    "y": 0
+                  },
+                  "fillLinearGradientColorStops": [0.5, "rgba(32, 138, 170, 1)", 0.5, "rgba(11, 237, 11, 0)"]
+                }
+              },
+              {
+                "className": "Star",
+                "attrs": {
+                  "x": 724.5,
+                  "y": 351.5,
+                  "numPoints": 5,
+                  "innerRadius": 10.25,
+                  "outerRadius": 20.5,
+                  "fill": "rgba(11, 237, 11, 0)",
+                  "stroke": "black",
+                  "strokeWidth": 2,
+                  "rating": 3.5,
+                  "id": "rating_125",
+                  "activeColor": "rgba(11, 237, 11, 0)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

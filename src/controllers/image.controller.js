@@ -20,7 +20,7 @@ const smartcrop = require('smartcrop-sharp');
 
 const logger = require('../config/logger');
 
-const templateData = require('../../db/template_2.json');
+const templateData = require('../../db/template_3.json');
 
 faceapi.env.monkeyPatch({ Canvas, Image, ImageData });
 
@@ -116,7 +116,7 @@ const generateImageFromQueryString = async (req, res) => {
       const item = JSON.parse(JSON.stringify(formatQueryString[key]));
       const element = stage.findOne(`#${item.name}`);
       if (element && element.className === 'Text') {
-        element.text(item.text);
+        element.text(item.value);
         // Call `layer.batchDraw()` to redraw the layer
         // so the changes are reflected on the stage
         stage.findOne('Layer').batchDraw();
@@ -136,6 +136,34 @@ const generateImageFromQueryString = async (req, res) => {
         const croppedImgBuffer = await applySmartCrop(buffer, parseInt(imgAttributes.width), parseInt(imgAttributes.height));
         const croppedImg = await loadImage(croppedImgBuffer);
         element.image(croppedImg);
+        stage.findOne('Layer').draw();
+      }
+      if (element && element.attrs.type === 'rating') {
+        const layer = new Konva.Layer();
+        console.log(element.attrs.x);
+        const ratingGroup = new Konva.Group();
+
+        const star = new Konva.Star({
+          x: element.children[0].attrs.x,
+          y: element.children[0].attrs.y,
+          numPoints: 6,
+          innerRadius: 40,
+          outerRadius: 70,
+          fill: 'yellow',
+          stroke: 'black',
+          strokeWidth: 4,
+        });
+        console.log('Group children length -> ', element.children.length);
+
+        for (let i = 0; i < element.children.length; i++) {
+          const star = new Konva.Star(element.children[i].attrs);
+
+          console.log('adding star to your group', element.children[i].attrs.x);
+          ratingGroup.add(star);
+        }
+        console.log('ratingGroup added to layer');
+        layer.add(ratingGroup);
+        stage.add(layer);
         stage.findOne('Layer').draw();
       }
     }
