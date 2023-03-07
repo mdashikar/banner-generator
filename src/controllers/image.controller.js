@@ -51,6 +51,41 @@ const generateQRCode = async (url) => {
   return qrCodeImage;
 };
 
+/**
+ * If the rating point is between the current star and the next star, then fill the star with a
+ * gradient. Otherwise, fill the star with the active color or the inactive color
+ * @param attrs - The attributes of the star.
+ * @param ratingPoint - The current rating point.
+ * @param starNumber - The number of the star being rendered.
+ * @returns An object with a fillPriority property and a fillLinearGradientColorStops property.
+ */
+const fillStar = (attrs, ratingPoint, starNumber) => {
+  /* This is to fill the star with half point */
+  /* E.g  rating point 3.5 then condition will match with star number 4 then star will be filled with half active and half inactive  */
+  if (ratingPoint - 0.5 === starNumber - 1) {
+    return {
+      fillPriority: 'linear-gradient',
+      fillLinearGradientStartPoint: { x: 0, y: 0 },
+      fillLinearGradientEndPoint: { x: 1, y: 0 },
+      fillLinearGradientColorStops: [0.5, attrs._fill, 0.5, attrs.inActiveColor || 'transparent'],
+    };
+  }
+
+  /* This is to fill the star with full point.
+   */
+  if (ratingPoint >= starNumber) {
+    return {
+      fill: attrs._fill,
+      fillPriority: 'color',
+    };
+  }
+  /* This is to fill the star with no point - meaning inactive color */
+  return {
+    fill: attrs.inActiveColor,
+    fillPriority: 'color',
+  };
+};
+
 // finds the best crop of src and writes the cropped and resized image to dest.
 const applySmartCrop = async (src, width, height) => {
   // Load the buffer as an image object
@@ -140,28 +175,19 @@ const generateImageFromQueryString = async (req, res) => {
       }
       if (element && element.attrs.type === 'rating') {
         const layer = new Konva.Layer();
-        console.log(element.attrs.x);
         const ratingGroup = new Konva.Group();
-
-        const star = new Konva.Star({
-          x: element.children[0].attrs.x,
-          y: element.children[0].attrs.y,
-          numPoints: 6,
-          innerRadius: 40,
-          outerRadius: 70,
-          fill: 'yellow',
-          stroke: 'black',
-          strokeWidth: 4,
-        });
-        console.log('Group children length -> ', element.children.length);
-
+        console.log(`rating value: ${item.value}`);
+        const ratingPoint = item.value;
         for (let i = 0; i < element.children.length; i++) {
-          const star = new Konva.Star(element.children[i].attrs);
+          const updatedStar = await fillStar(element.children[i].attrs, ratingPoint, i + 1);
+          const star = new Konva.Star({
+            ...element.children[i].attrs,
+            ...updatedStar,
+          });
 
-          console.log('adding star to your group', element.children[i].attrs.x);
+          // console.log(star);
           ratingGroup.add(star);
         }
-        console.log('ratingGroup added to layer');
         layer.add(ratingGroup);
         stage.add(layer);
         stage.findOne('Layer').draw();

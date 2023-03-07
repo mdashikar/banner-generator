@@ -296,66 +296,73 @@
               {
                 "className": "Star",
                 "attrs": {
-                  "x": 560.5,
-                  "y": 351.5,
+                  "x": 505,
+                  "y": 337.5,
                   "numPoints": 5,
-                  "innerRadius": 10.25,
-                  "outerRadius": 20.5,
-                  "fill": "rgba(32, 138, 170, 1)",
+                  "innerRadius": 10,
+                  "outerRadius": 20,
+                  "fill": "rgba(251, 251, 16, 1)",
+                  "inActiveColor": "rgba(108, 28, 234, 1)",
                   "stroke": "black",
-                  "strokeWidth": 2,
+                  "strokeWidth": 1,
                   "rating": 3.5,
-                  "id": "rating_121",
-                  "activeColor": "rgba(11, 237, 11, 0)"
+                  "id": "9P4MBx",
+                  "fillPriority": "color",
+                  "_fill": "rgba(251, 251, 16, 1)"
                 }
               },
               {
                 "className": "Star",
                 "attrs": {
-                  "x": 601.5,
-                  "y": 351.5,
+                  "x": 545,
+                  "y": 337.5,
                   "numPoints": 5,
-                  "innerRadius": 10.25,
-                  "outerRadius": 20.5,
-                  "fill": "rgba(32, 138, 170, 1)",
+                  "innerRadius": 10,
+                  "outerRadius": 20,
+                  "fill": "rgba(251, 251, 16, 1)",
+                  "inActiveColor": "rgba(108, 28, 234, 1)",
                   "stroke": "black",
-                  "strokeWidth": 2,
+                  "strokeWidth": 1,
                   "rating": 3.5,
-                  "id": "rating_122",
-                  "activeColor": "rgba(11, 237, 11, 0)"
+                  "id": "aU1bfA",
+                  "fillPriority": "color",
+                  "_fill": "rgba(251, 251, 16, 1)"
                 }
               },
               {
                 "className": "Star",
                 "attrs": {
-                  "x": 642.5,
-                  "y": 351.5,
+                  "x": 585,
+                  "y": 337.5,
                   "numPoints": 5,
-                  "innerRadius": 10.25,
-                  "outerRadius": 20.5,
-                  "fill": "rgba(32, 138, 170, 1)",
+                  "innerRadius": 10,
+                  "outerRadius": 20,
+                  "fill": "rgba(251, 251, 16, 1)",
+                  "inActiveColor": "rgba(108, 28, 234, 1)",
                   "stroke": "black",
-                  "strokeWidth": 2,
+                  "strokeWidth": 1,
                   "rating": 3.5,
-                  "id": "rating_123",
-                  "activeColor": "rgba(11, 237, 11, 0)"
+                  "id": "PNHG5U",
+                  "fillPriority": "color",
+                  "_fill": "rgba(251, 251, 16, 1)"
                 }
               },
               {
                 "className": "Star",
                 "attrs": {
-                  "x": 683.5,
-                  "y": 351.5,
+                  "x": 625,
+                  "y": 337.5,
                   "numPoints": 5,
-                  "innerRadius": 10.25,
-                  "outerRadius": 20.5,
-                  "fill": "rgba(32, 138, 170, 1)",
+                  "innerRadius": 10,
+                  "outerRadius": 20,
+                  "fill": "rgba(251, 251, 16, 1)",
+                  "inActiveColor": "rgba(108, 28, 234, 1)",
                   "stroke": "black",
-                  "strokeWidth": 2,
+                  "strokeWidth": 1,
                   "rating": 3.5,
-                  "id": "rating_124",
-                  "activeColor": "rgba(11, 237, 11, 0)",
+                  "id": "bfdfkX",
                   "fillPriority": "linear-gradient",
+                  "_fill": "rgba(251, 251, 16, 1)",
                   "fillLinearGradientStartPoint": {
                     "x": 0,
                     "y": 0
@@ -364,23 +371,30 @@
                     "x": 1,
                     "y": 0
                   },
-                  "fillLinearGradientColorStops": [0.5, "rgba(32, 138, 170, 1)", 0.5, "rgba(11, 237, 11, 0)"]
+                  "fillLinearGradientColorStops": [
+                    0.5,
+                    "rgba(251, 251, 16, 1)",
+                    0.5,
+                    "rgba(108, 28, 234, 1)"
+                  ]
                 }
               },
               {
                 "className": "Star",
                 "attrs": {
-                  "x": 724.5,
-                  "y": 351.5,
+                  "x": 665,
+                  "y": 337.5,
                   "numPoints": 5,
-                  "innerRadius": 10.25,
-                  "outerRadius": 20.5,
-                  "fill": "rgba(11, 237, 11, 0)",
+                  "innerRadius": 10,
+                  "outerRadius": 20,
+                  "fill": "rgba(108, 28, 234, 1)",
+                  "inActiveColor": "rgba(108, 28, 234, 1)",
                   "stroke": "black",
-                  "strokeWidth": 2,
+                  "strokeWidth": 1,
                   "rating": 3.5,
-                  "id": "rating_125",
-                  "activeColor": "rgba(11, 237, 11, 0)"
+                  "id": "nb_jzP",
+                  "fillPriority": "color",
+                  "_fill": "rgba(251, 251, 16, 1)"
                 }
               }
             ]
